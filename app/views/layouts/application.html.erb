@@ -8,9 +8,31 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+      .block-text{
+          width: 100px;
+          heigth: 100px;
+          border: 1px solid red;
+          font-size:  100px;
+      }
+      .block{
+          width: 100px;
+          heigth: 100px;
+          border: 1px solid black;
+          font-size:  100px;
+      }
+    </style>
   </head>
 
   <body>
     <%= yield %>
+    <script>
+      let clicker = document.querySelector('.block');
+      let text = document.querySelector('.block-text');
+        clicker.onclick = myFunction;
+        function myFunction(){
+            text.innerHTML = <%= @button.clicks %> ;
+        }
+    </script>
   </body>
 </html>
