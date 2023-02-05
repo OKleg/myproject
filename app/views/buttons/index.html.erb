@@ -2,12 +2,8 @@
   <h1 class="text" >This Button Has</h1>
   <h1 class="text" >Been Clicked</h1>
   <div class="block-text"  id="clicker"><%= @button.clicks %></div>
-<!--  <h1 class="text" >Times</h1>-->
-
-<!--  <h2>Maybe you should give it a click!</h2>-->
-
 <!--  <button class="btn">Click Me!</button>-->
-  <div class="block">
-  <%=button_to  "Click here", buttons_click_path, method: :post %>
-  </div>
+
+  <%=button_to  "Click here", buttons_click_path, method: :post,onclick: 'myFunction' %>
+  <%=button_to  "Click", onclick: 'myFunction' %>
 </div>

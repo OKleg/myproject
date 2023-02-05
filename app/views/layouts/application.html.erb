@@ -10,16 +10,15 @@
     <%= javascript_importmap_tags %>
     <style>
       .block-text{
-          width: 100px;
-          heigth: 100px;
+          width: 76px;
+          height: 70px;
           border: 1px solid red;
-          font-size:  100px;
+          font-size:  70px;
       }
-      .block{
-          width: 100px;
-          heigth: 100px;
+      .button_to{
+          width: 76px;
+          height: 20px;
           border: 1px solid black;
-          font-size:  100px;
       }
     </style>
   </head>
@@ -27,12 +26,12 @@
   <body>
     <%= yield %>
     <script>
-      let clicker = document.querySelector('.block');
       let text = document.querySelector('.block-text');
-        clicker.onclick = myFunction;
-        function myFunction(){
-            text.innerHTML = <%= @button.clicks %> ;
-        }
+      let clicker = document.getElementsByClassName('button_to');
+      function myFunction(){
+          text.innerHTML = <%=@button.clicks %>;
+      }
+      clicker.onclick = myFunction();
     </script>
   </body>
 </html>

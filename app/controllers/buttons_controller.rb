@@ -10,6 +10,7 @@ class ButtonsController < ApplicationController
       @button.save
     end
   end
+
   def click
     if Button.find(1)
       @button = Button.find(1)
