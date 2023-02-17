@@ -1,46 +1,18 @@
 class ButtonsController < ApplicationController
+  before_action :first_button!, only: %i[index increase]
+
   def index
-    if Button.find(1)
-      @button = Button.find(1)
-    else
-      @button = Button.create(id:1, click: 0)
-    end
-    if  @button.clicks.nil?
-      @button.clicks = 0
-      @button.save
-    end
   end
 
-  def click
-    if Button.find(1)
-      @button = Button.find(1)
-    else
-      @button = Button.create(id:1, click: 0)
-    end
-    if  @button.clicks.nil?
-      @button.clicks = 0
-      @button.save
-    end
-    @countClicks = @button.clicks.to_i
-    Button.update 1, clicks: @countClicks+1
+  def increase
+    sleep 2
+    @button.clicks = 1 + @button.clicks.to_i
+    @button.save
   end
 
-=begin
-  def create
-    if Button.find(1)
-      @button = Button.find(1)
-    else
-      @button = Button.create(id:1, click: 0)
-    end
-    if  @button.clicks.nil?
-      @button.clicks = 0
-      @button.save
-    end
-    @countClicks = @button.clicks.to_i
-    Button.update 1, clicks: @countClicks+1
+  private
+  def first_button!
+    @button = Button.find(1)
   end
-=end
-
-
 
 end

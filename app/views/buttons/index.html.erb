@@ -1,9 +1,6 @@
-<div id="container">
-  <h1 class="text" >This Button Has</h1>
-  <h1 class="text" >Been Clicked</h1>
-  <div class="block-text"  id="clicker"><%= @button.clicks %></div>
-<!--  <button class="btn">Click Me!</button>-->
 
-  <%=button_to  "Click here", buttons_click_path, method: :post,onclick: 'myFunction' %>
-  <%=button_to  "Click", onclick: 'myFunction' %>
+<div class="block-text"  id="clicker"><%= @button.clicks %></div>
+</div>
+  <%=button_to  "+", increase_path, method: :get%>
+  <%#=button_to  "Click", onclick: 'myFunction' %>
 </div>

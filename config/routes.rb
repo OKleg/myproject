@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # end
   resources :buttons
   root 'buttons#index'
-  post 'buttons/click'
+  get '/increase', to:'buttons#increase'
 end
