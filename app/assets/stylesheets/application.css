@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.block-text{
+    width: 76px;
+    height: 70px;
+    border: 1px solid red;
+    font-size:  70px;
+}
+.button_to{
+    width: 76px;
+    height: 20px;
+    border: 1px solid black;
+}
