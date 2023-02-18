@@ -8,9 +8,12 @@ class ButtonsController < ApplicationController
     sleep 2
     @button.clicks = 1 + @button.clicks.to_i
     @button.save
+    # ActionCable.server.broadcast 'ClicksChannel', {
+    #   message: ButtonsController.render(layout: 'buttons/index') }
   end
 
   private
+
   def first_button!
     @button = Button.find(1)
   end
